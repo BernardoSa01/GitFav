@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+      /* Fonts */
+  --font-family-primary: 'Roboto', sans-serif;
+  --font-family-secondary: 'Roboto Mono', sans-serif;
+
+      /* Text colors */
+  --color-base-white: hsl(0, 0%, 100%);
+  --text-color: hsl(240, 9%, 89%);
+  --secondary-color: hsl(189, 4%, 32%);
+  --placeholder-color: hsl(240, 6%, 51%);
+  --action-color: hsl(355, 91%, 66%);
+
+      /* Layout colors */
+  --background-color: hsl(0, 0%, 0%);
+  --background-empty-table-color: #030B0D;
+  --input-color: hsl(191, 65%, 7%);
+  --button-color: hsl(195, 91%, 25%);
+  --row-primary-color: hsla(194, 64%, 6%, 0.502);
+  --row-secondary-color: hsl(191, 65%, 7%);
+  --thead-color: hsl(194, 72%, 13%);
+  --border-color: hsl(191, 31%, 42%);
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+body * {
+  font-family: var(--font-family-primary)
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.submit {
+  background-color: var(--button-color);
+  color: var(--color-base-white);
+}
+
+#app {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header { 
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+
+  margin-top: 4.5rem;
+  margin-bottom: 8.7rem;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+
+.search input {
+  width: 46.2rem;
+  height: 4.8rem;
+  padding: 1.6rem;
+  border: none;
+  border-radius: .5rem;
+
+  background: var(--input-color);
+  color: var(--color-base-white);
+  font-size: 1.6rem;
+}
+
+.search input::placeholder {
+  color: var(--placeholder-color);
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.search button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 1.2rem 3.2rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: .5rem;
+  cursor: pointer;
+}
+
+.search button:hover {
+  background-color: var(--color-base-white);
+  color: var(--button-color);
+  font-weight: 500;
+  transition: 0.2s ease-in-out;
+}
+
+/* Manipulando a cor da imagem svg*/
+.search button:hover svg path {
+  fill: var(--button-color);
+}
+
+
+/*     Table     */
+
+table {
+  width: 100%;
+  border-collapse: separate; 
+  border-spacing: 0; 
+  border: 1px solid hsl(191, 31%, 42%); 
+  border-radius: 1.2rem; 
+  overflow: hidden; 
+}
+
+table * {
+  font-size: 2rem;
+  color: var(--text-color);
+}
+
+table th {
+  background: var(--thead-color);
+  padding: 1.6rem 2.4rem 1.6rem 4rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+table th:first-child {
+  border-top-left-radius: 1.2rem;
+}
+
+table th:last-child {
+  border-top-right-radius: 1.2rem;
+}
+
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 1.2rem;
+}
+
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 1.2rem;
+}
+
+/* Alterando o background da linha em linhas pares ou ímpares */
+table tr:nth-child(odd) {
+  background: var(--row-primary-color);
+}
+
+table tr:nth-child(even) {
+  background: var(--row-secondary-color);
+}
+
+table td {
+  padding: 4rem;
+  text-align: left;
+}
+
+td.user {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+td.user img {
+  width: 5.6rem;
+  height: 5.6rem;
+
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+td.user a {
+  text-decoration: none;
+}
+
+td.user a p {
+  font-weight: bold;
+}
+
+td .remove {
+  background: none;
+  border: none;
+  color: var(--action-color);
+  cursor: pointer;
+}
+
+td .remove:hover {
+  filter: brightness(0.7);
+}
+
+table tbody .noFavorites td {
+  font-family: var(--font-family-secondary);
+  font-size: 4rem;
+  
+
+  display: table-cell;
+  text-align: center;
+  height: 38rem;
+  padding: 0;
+  background-color: var(--background-empty-table-color);
+}
+
+table tbody .noFavorites td div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.noFavorites td p {
+  font-weight: 700;
+  font-size: 4rem;
+
+  color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+
+
+
+
